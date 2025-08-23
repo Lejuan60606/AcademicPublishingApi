@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademicPublishingAssignment", "AcademicPublishingAssignment\AcademicPublishingAssignment.csproj", "{2EBEC488-64CD-4C6C-A08B-B39D824DAD89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademicPublishingAssignmentTests", "AcademicPublishingAssignmentTests\AcademicPublishingAssignmentTests.csproj", "{0B9390A0-81FC-456B-9BAC-B000C620E0FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{2EBEC488-64CD-4C6C-A08B-B39D824DAD89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EBEC488-64CD-4C6C-A08B-B39D824DAD89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EBEC488-64CD-4C6C-A08B-B39D824DAD89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B9390A0-81FC-456B-9BAC-B000C620E0FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B9390A0-81FC-456B-9BAC-B000C620E0FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B9390A0-81FC-456B-9BAC-B000C620E0FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B9390A0-81FC-456B-9BAC-B000C620E0FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
