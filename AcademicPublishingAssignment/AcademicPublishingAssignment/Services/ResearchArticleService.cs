@@ -24,41 +24,25 @@ namespace AcademicPublishingAssignment.Services
                 Id = article.Id,
                 Title = article.Title,
                 PublicationDate = article.PublicationDate,
-                Journal = new JournalDto
-                {
-                    Id = article.Journal.Id,
-                    Name = article.Journal.Name,
-                    ISSN = article.Journal.ISSN,
-                    Publisher = article.Journal.Publisher,
-                    Description = article.Journal.Description
-                },
+                JournalName = article.Journal.Name,
                 Authors = article.ArticleAuthors
                     .OrderBy(aa => aa.AuthorOrder)
-                    .Select(aa => new AuthorDto
-                    {
-                        Id = aa.Author.Id,
-                        FirstName = aa.Author.FirstName,
-                        LastName = aa.Author.LastName,
-                        Affiliation = aa.Author.Affiliation,
-                        Email = aa.Author.Email,
-                        FullName = aa.Author.FullName,
-                        AuthorOrder = aa.AuthorOrder
-                    })
+                    .Select(aa => aa.Author.FullName)
                     .ToList()
             };
         }
 
-        public async Task<IEnumerable<ResearchArticleSummaryDto>> GetAllArticlesAsync()
+        public async Task<IEnumerable<ResearchArticleDto>> GetAllArticlesAsync()
         {
             var articles = await _dataRepository.GetAllArticlesAsync();
 
-            return articles.Select(article => new ResearchArticleSummaryDto
+            return articles.Select(article => new ResearchArticleDto
             {
                 Id = article.Id,
                 Title = article.Title,
                 PublicationDate = article.PublicationDate,
                 JournalName = article.Journal.Name,
-                AuthorNames = article.ArticleAuthors
+                Authors = article.ArticleAuthors
                     .OrderBy(aa => aa.AuthorOrder)
                     .Select(aa => aa.Author.FullName)
                     .ToList()

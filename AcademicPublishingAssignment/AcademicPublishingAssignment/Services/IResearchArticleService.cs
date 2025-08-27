@@ -5,6 +5,6 @@ namespace AcademicPublishingAssignment.Services
     public interface IResearchArticleService
     {
         Task<ResearchArticleDto?> GetArticleByArticleIdIdAsync(int articleId);
-        Task<IEnumerable<ResearchArticleSummaryDto>> GetAllArticlesAsync();
+        Task<IEnumerable<ResearchArticleDto>> GetAllArticlesAsync();
     }
 }
