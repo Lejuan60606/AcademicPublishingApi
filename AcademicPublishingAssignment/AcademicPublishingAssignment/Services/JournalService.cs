@@ -12,17 +12,17 @@ namespace AcademicPublishingAssignment.Services
             _dataRepository = dataRepository;
         }
 
-        public async Task<IEnumerable<ResearchArticleSummaryDto>> GetArticlesByJournalIdAsync(int journalId)
+        public async Task<IEnumerable<ResearchArticleDto>> GetArticlesByJournalIdAsync(int journalId)
         {
             var articles = await _dataRepository.GetArticlesByJournalIdAsync(journalId);
 
-            return articles.Select(article => new ResearchArticleSummaryDto
+            return articles.Select(article => new ResearchArticleDto
             {
                 Id = article.Id,
                 Title = article.Title,
                 PublicationDate = article.PublicationDate,
                 JournalName = article.Journal.Name,
-                AuthorNames = article.ArticleAuthors
+                Authors = article.ArticleAuthors
                     .OrderBy(aa => aa.AuthorOrder)
                     .Select(aa => aa.Author.FullName)
                     .ToList()

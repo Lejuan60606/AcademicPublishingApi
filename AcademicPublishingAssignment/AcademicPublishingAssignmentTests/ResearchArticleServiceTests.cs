@@ -74,11 +74,11 @@ namespace AcademicPublishingAssignmentTests
             Assert.IsNotNull(result);
             Assert.That(result.Id, Is.EqualTo(articleId));
             Assert.That(result.Title, Is.EqualTo("Test Article"));
-            Assert.IsNotNull(result.Journal);
-            Assert.That(result.Journal.Name, Is.EqualTo("Nature"));
+            Assert.IsNotNull(result.JournalName);
+            Assert.That(result.JournalName, Is.EqualTo("Nature"));
             Assert.That(result.Authors, Has.Count.EqualTo(2));
-            Assert.True(result.Authors.Any(a => a.FullName == "John Chen"));
-            Assert.True(result.Authors.Any(a => a.FullName == "Emily Smith"));
+            Assert.True(result.Authors.Any(a => a == "John Chen"));
+            Assert.True(result.Authors.Any(a => a == "Emily Smith"));
         }
     }
 }
